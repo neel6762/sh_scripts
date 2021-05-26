@@ -1,0 +1,4 @@
+#!/bin/bash 
+result=$(host $1 | awk '/has address/ {print $4}' | pbcopy)
+ip=$(pbpaste)
+echo "$ip : copied to clipboard"

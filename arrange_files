@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# get the value of the 1st argument, the path of the folder to sort files
+goto_dir=$1
+echo $goto_dir
+
+# iterate over files in the directory
+for file in $goto_dir/*;do
+    file_basename=$(basename $file)
+    echo "Processing :: $file_basename"
+    file_type=${file_basename##*.}
+    echo "File type :: $file_type"
+done
